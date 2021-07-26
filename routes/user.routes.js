@@ -13,7 +13,6 @@ router.get('/user/:id', async(req, res, next) => {
 
 router.get('/users', async(req, res, next) => {
     try {
-        console.log(process.env.NODE_ENV, "env");
         const users = await User.findAll();
         res.send(users);
     } catch (error) {

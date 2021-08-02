@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors')
 const { Sequelize } = require('sequelize');
 require("dotenv").config();
 
@@ -10,6 +11,7 @@ const postRoute = require('./routes/post.routes');
 
 //Middlewares
 app.use(express.json());
+app.use(cors());
 
 //Route Middlwares
 app.use('/api', [userRoute, authRoute]);
